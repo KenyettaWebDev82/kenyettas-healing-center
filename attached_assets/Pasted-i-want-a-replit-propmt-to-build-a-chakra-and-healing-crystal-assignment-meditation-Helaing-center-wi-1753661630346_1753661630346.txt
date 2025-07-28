@@ -1,0 +1,118 @@
+i want a replit propmt to build a chakra and healing crystal assignment meditation Helaing center with the to heal and raise vibrations color scheme is the chakras one page website Kenyetta's Healing Center with the lotus as the home page icon 
+navbar has chakras explaining the chakras and what the blockage can effect emotionally spiritual and physically - 
+chakra test to see which chakras are blocked - 
+crystals an e commerce list of 100 natural healing crystals with their healing properties  with a filter for the specific blocked chakra what  chakras can be unblocked and any other detailed helpful information with clicked with a crystals detail page from the crystals page - 
+meditation page one you take the blocked chakra test and use the crystal e commerse filter to list natural crystal to help unblock the listed chakra with a guided 15 min meditation at the chakra frequency with instructions what to do with the crystal 
+- with a firebase user database keeping track of how the user feels everytime the user signs in with the smiley faces 1 to 10 like the doctors office 
+- every time the user comes back the goal is to see there users mood improve after mediation and using the Healing center over tiem - any questins 
+
+
+ChatGPT said:
+Here’s a Replit prompt you can paste into Replit to generate a full-stack Chakra & Healing Crystal Meditation Healing Center project. This will set up a beautiful Chakra-themed one-page wellness website with user mood tracking, chakra test, crystal e-commerce section, and guided meditation — all with Chakra color themes, Firebase integration, and interactive features.
+
+🔮 Replit Prompt:
+(Just paste this in the Replit "Start with AI" prompt)
+
+Prompt to Paste into Replit:
+
+Build a full-stack Chakra & Healing Crystal Meditation Healing Center one-page website called "Kenyetta's Healing Center" with the following:
+
+🌸 Design Theme:
+
+Chakra color scheme for each section (Root to Crown colors)
+
+Lotus icon as home button in navbar
+
+Clean, calming Chakra-aligned typography and background
+
+🧘🏽‍♀️ Navbar Sections:
+
+Chakras – Interactive section explaining the 7 chakras. For each:
+
+Color & location
+
+Emotional, spiritual & physical impact of blockages
+
+Chakra frequency
+
+Chakra Test – A quiz with 10–12 questions that identifies blocked chakras
+
+Once submitted, shows user which chakras are blocked
+
+Crystals Shop (E-commerce):
+
+List of 100 natural healing crystals
+
+Filter crystals by chakra or healing property
+
+Each crystal has a detail page showing:
+
+Healing properties
+
+Chakra association
+
+How to use in meditation
+
+Meditation:
+
+Based on blocked chakras, shows crystals that help
+
+Embedded 15-minute guided meditation audio (host on public folder or use YouTube)
+
+Instructions on how to hold/place the crystal
+
+User Dashboard (with Firebase Auth & Firestore):
+
+Sign in / Register with email
+
+Daily mood tracker with smiley faces scale (1–10)
+
+Tracks mood over time
+
+Goal: track user’s emotional improvement over time
+
+🔧 Tech Stack:
+
+Frontend: React (with Chakra UI for Chakra-themed design)
+
+Backend: Firebase (Auth + Firestore)
+
+Chakra UI components
+
+Crystal data stored in JSON or Firestore
+
+Audio player for meditation
+
+🎯 Bonus:
+
+Responsive layout for mobile
+
+Chakra hover animations
+
+Daily affirmation popup after sign-in
+
+Option to journal with mood entry
+
+Output all code clearly in files with explanations:
+
+App.js
+
+ChakraTest.js
+
+CrystalsPage.js
+
+CrystalDetail.js
+
+MeditationPage.js
+
+Navbar.js
+
+firebase.js
+
+MoodTracker.js
+
+UserDashboard.js
+
+Include Chakra UI theme and ChakraProvider
+
+The website should feel like a safe, healing space.
