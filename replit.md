@@ -26,9 +26,10 @@ Preferred communication style: Simple, everyday language.
 - **API Structure**: RESTful API with `/api` prefix
 
 ### Data Storage
-- **Primary Database**: PostgreSQL via Drizzle ORM (schema defined but not yet implemented)
-- **Current Storage**: In-memory storage for development
-- **Firebase Firestore**: User data, mood entries, meditation sessions, and chakra test results
+- **Primary Database**: PostgreSQL via Drizzle ORM (fully implemented with proper schema)
+- **Production Storage**: PostgreSQL with complete database tables for users, mood entries, meditation sessions, and chakra test results
+- **Development Storage**: In-memory storage as fallback for rapid development
+- **Firebase Integration**: Authentication and supplementary data storage
 - **Session Storage**: PostgreSQL with connect-pg-simple
 
 ## Key Components
@@ -109,8 +110,9 @@ Preferred communication style: Simple, everyday language.
 ### Production Build
 1. **Frontend**: Vite builds React app to `dist/public`
 2. **Backend**: ESBuild bundles Express server to `dist/index.js`
-3. **Database**: Drizzle migrations can be run with `npm run db:push`
+3. **Database**: PostgreSQL with Drizzle schema deployed via `npm run db:push`
 4. **Static Assets**: Express serves built frontend files
+5. **Deployment**: Ready for Replit deployment with build command configured
 
 ### Environment Configuration
 Required environment variables:
@@ -121,7 +123,10 @@ Required environment variables:
 
 ### Architecture Notes
 - The application is designed for single-page deployment
-- Database schema is defined but migrations need to be run
-- Firebase configuration is flexible for different environments
+- Database schema is fully implemented with PostgreSQL tables created
+- PERN stack (PostgreSQL, Express, React, Node.js) ready for production deployment
+- Firebase configuration supports authentication and supplementary data storage
 - The chakra color scheme and healing center branding is integrated throughout the UI
 - Audio meditation files can be added to support guided meditation features
+- Dual storage system: PostgreSQL for production, in-memory for development
+- Comprehensive build system with Vite (frontend) and ESBuild (backend)

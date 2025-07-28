@@ -85,14 +85,12 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a className={`px-3 py-2 font-medium transition-colors ${
-                  isActive(item.href) 
-                    ? 'text-jade font-semibold' 
-                    : 'text-gray-700 hover:text-jade'
-                }`}>
-                  {item.label}
-                </a>
+              <Link key={item.href} href={item.href} className={`px-3 py-2 font-medium transition-colors ${
+                isActive(item.href) 
+                  ? 'text-jade font-semibold' 
+                  : 'text-gray-700 hover:text-jade'
+              }`}>
+                {item.label}
               </Link>
             ))}
           </div>
