@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, collection, addDoc, updateDoc, doc, getDoc, getDocs, query, where, orderBy, limit } from "firebase/firestore";
+import { MoodEntry, ChakraTestResult, MeditationSession } from "@shared/schema";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "demo-key",
@@ -85,7 +86,7 @@ export const addMoodEntry = async (userId: string, mood: number, note?: string) 
   return await addDoc(collection(db, 'moodEntries'), moodEntry);
 };
 
-export const getMoodEntries = async (userId: string, days: number = 30) => {
+export const getMoodEntries = async (userId: string, days: number = 30): Promise<MoodEntry[]> => {
   const startDate = new Date();
   startDate.setDate(startDate.getDate() - days);
   
@@ -97,7 +98,11 @@ export const getMoodEntries = async (userId: string, days: number = 30) => {
   );
   
   const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  return querySnapshot.docs.map(doc => ({ 
+    id: doc.id, 
+    ...doc.data(),
+    timestamp: doc.data().timestamp?.toDate() || new Date()
+  } as MoodEntry));
 };
 
 export const saveChakraTestResults = async (userId: string, results: any) => {
@@ -111,7 +116,7 @@ export const saveChakraTestResults = async (userId: string, results: any) => {
   return await addDoc(collection(db, 'chakraTests'), testResult);
 };
 
-export const getLatestChakraTest = async (userId: string) => {
+export const getLatestChakraTest = async (userId: string): Promise<ChakraTestResult | null> => {
   const q = query(
     collection(db, 'chakraTests'),
     where('userId', '==', userId),
@@ -121,7 +126,12 @@ export const getLatestChakraTest = async (userId: string) => {
   
   const querySnapshot = await getDocs(q);
   if (!querySnapshot.empty) {
-    return { id: querySnapshot.docs[0].id, ...querySnapshot.docs[0].data() };
+    const data = querySnapshot.docs[0].data();
+    return { 
+      id: querySnapshot.docs[0].id, 
+      ...data,
+      timestamp: data.timestamp?.toDate() || new Date()
+    } as ChakraTestResult;
   }
   return null;
 };
@@ -137,7 +147,7 @@ export const addMeditationSession = async (userId: string, sessionData: any) => 
   return await addDoc(collection(db, 'meditationSessions'), session);
 };
 
-export const getMeditationSessions = async (userId: string) => {
+export const getMeditationSessions = async (userId: string): Promise<MeditationSession[]> => {
   const q = query(
     collection(db, 'meditationSessions'),
     where('userId', '==', userId),
@@ -145,5 +155,9 @@ export const getMeditationSessions = async (userId: string) => {
   );
   
   const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  return querySnapshot.docs.map(doc => ({ 
+    id: doc.id, 
+    ...doc.data(),
+    timestamp: doc.data().timestamp?.toDate() || new Date()
+  } as MeditationSession));
 };
