@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(158, 64%, 52%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Healing Center Custom Colors */
+  --jade: hsl(158, 64%, 52%);
+  --jade-light: hsl(158, 64%, 62%);
+  --jade-dark: hsl(158, 64%, 42%);
+  --cream: hsl(37, 59%, 97%);
+  --cream-dark: hsl(37, 59%, 92%);
+  
+  /* Chakra Colors */
+  --chakra-root: hsl(0, 73%, 50%);
+  --chakra-sacral: hsl(24, 89%, 50%);
+  --chakra-solar: hsl(43, 96%, 56%);
+  --chakra-heart: hsl(158, 64%, 52%);
+  --chakra-throat: hsl(217, 78%, 61%);
+  --chakra-third-eye: hsl(239, 62%, 61%);
+  --chakra-crown: hsl(258, 77%, 64%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(158, 64%, 52%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-gradient-to-br from-cream via-green-50 to-jade/10 text-foreground min-h-screen;
+  }
+}
+
+@layer components {
+  .chakra-gradient {
+    background: linear-gradient(135deg, 
+      var(--chakra-root) 0%, 
+      var(--chakra-sacral) 14.28%, 
+      var(--chakra-solar) 28.56%, 
+      var(--chakra-heart) 42.84%, 
+      var(--chakra-throat) 57.12%, 
+      var(--chakra-third-eye) 71.4%, 
+      var(--chakra-crown) 85.68%, 
+      var(--chakra-root) 100%
+    );
+  }
+  
+  .sacred-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(16, 185, 129, 0.1) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+  
+  .jade {
+    color: var(--jade);
+  }
+  
+  .bg-jade {
+    background-color: var(--jade);
+  }
+  
+  .border-jade {
+    border-color: var(--jade);
+  }
+  
+  .bg-cream {
+    background-color: var(--cream);
+  }
+  
+  .chakra-root {
+    color: var(--chakra-root);
+  }
+  
+  .bg-chakra-root {
+    background-color: var(--chakra-root);
+  }
+  
+  .chakra-sacral {
+    color: var(--chakra-sacral);
+  }
+  
+  .bg-chakra-sacral {
+    background-color: var(--chakra-sacral);
+  }
+  
+  .chakra-solar {
+    color: var(--chakra-solar);
+  }
+  
+  .bg-chakra-solar {
+    background-color: var(--chakra-solar);
+  }
+  
+  .chakra-heart {
+    color: var(--chakra-heart);
+  }
+  
+  .bg-chakra-heart {
+    background-color: var(--chakra-heart);
+  }
+  
+  .chakra-throat {
+    color: var(--chakra-throat);
+  }
+  
+  .bg-chakra-throat {
+    background-color: var(--chakra-throat);
+  }
+  
+  .chakra-third-eye {
+    color: var(--chakra-third-eye);
+  }
+  
+  .bg-chakra-third-eye {
+    background-color: var(--chakra-third-eye);
+  }
+  
+  .chakra-crown {
+    color: var(--chakra-crown);
+  }
+  
+  .bg-chakra-crown {
+    background-color: var(--chakra-crown);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
