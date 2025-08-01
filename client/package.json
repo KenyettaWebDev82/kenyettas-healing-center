@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@tanstack/react-query": "^5.84.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "wouter": "^3.7.1"
