@@ -11,7 +11,9 @@ import Crystals from "@/pages/Crystals";
 import CrystalDetail from "@/pages/CrystalDetail";
 import Meditation from "@/pages/Meditation";
 import Dashboard from "@/pages/Dashboard";
+import Register from "./pages/Register";
 import NotFound from "@/pages/not-found";
+
 
 function Router() {
   return (
@@ -26,6 +28,7 @@ function Router() {
           <Route path="/crystals/:id" component={CrystalDetail} />
           <Route path="/meditation" component={Meditation} />
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/register" component={Register} />   
           <Route component={NotFound} />
         </Switch>
       </main>
